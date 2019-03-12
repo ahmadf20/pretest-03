@@ -30,7 +30,7 @@ void inputMhs(larikMhs& mhs, int n){
         cout << "IPK    : "; cin >> mhs[i].IPK;
     }
 }
-void cetakMhs(larikMhs& mhs, int n){
+void cetakMhs(larikMhs mhs, int n){
     cout << "Cetak data :" << endl;
     cout << "No.\tNPM\tNama\tIPK" << endl;
     for(int i = 0; i < n; i++)
@@ -41,10 +41,10 @@ void cetakMhs(larikMhs& mhs, int n){
 void sortNPM(larikMhs& mhs, int n){
     for(int i = n; i > 0; i--)
     {
-        for(int j = i; j < n; j++)
+        for(int j = i; j <= n; j++)
         {
-            if (mhs[j].NPM > mhs[j+1].NPM) {
-                swap(mhs[j], mhs[j+1]);
+            if (mhs[j+1].NPM > mhs[j].NPM) {
+                swap(mhs[j+1], mhs[j]);
             }
         }
     }
